@@ -17,4 +17,9 @@ public class BaseballCoach implements Coach {
         return "Spend 30 minutes on batting practice";
 
     }
+
+    public String getdailyFortune() {
+
+        return fortuneService.getFortune();
+    }
 }

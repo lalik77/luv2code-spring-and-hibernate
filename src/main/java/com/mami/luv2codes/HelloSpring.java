@@ -14,10 +14,14 @@ public class HelloSpring {
 
         System.out.println(baseballCoach.getDailyWorkout());
 
-        FortuneService fortuneService = ctx.getBean("myFortuneService",FortuneService.class);
+        System.out.println(baseballCoach.getdailyFortune());
 
-        System.out.println(fortuneService.getFortune());
 
-        BaseballCoach baseballCoach1 = new BaseballCoach();
+
+       // FortuneService fortuneService = ctx.getBean("myFortuneService",FortuneService.class);
+
+        //System.out.println(fortuneService.getFortune());
+
+
     }
 }

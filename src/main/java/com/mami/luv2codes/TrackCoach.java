@@ -6,4 +6,8 @@ public class TrackCoach implements Coach{
         return "Run a hard 5k";
 
     }
+
+    public String getdailyFortune() {
+        return null;
+    }
 }
