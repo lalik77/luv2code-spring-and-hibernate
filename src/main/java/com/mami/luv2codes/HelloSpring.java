@@ -17,10 +17,20 @@ public class HelloSpring {
         System.out.println(baseballCoach.getdailyFortune());
 
 
+        TrackCoach trackCoach = ctx.getBean("trackCoach",TrackCoach.class);
+
+        System.out.println(trackCoach.getDailyWorkout());
+        System.out.println(trackCoach.getdailyFortune());
+
+
 
        // FortuneService fortuneService = ctx.getBean("myFortuneService",FortuneService.class);
 
         //System.out.println(fortuneService.getFortune());
+
+        ( (ClassPathXmlApplicationContext )ctx).close();
+
+
 
 
     }
