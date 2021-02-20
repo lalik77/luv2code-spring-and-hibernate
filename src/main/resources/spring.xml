@@ -8,6 +8,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
+    <context:property-placeholder location="classpath:sport.properties"/>
 
     <bean id="myFortuneService" class="com.mami.luv2codes.HappyFortuneService" ></bean>
 
@@ -24,8 +25,8 @@
 
         <property name="fortuneService" ref="myFortuneService"/>
 
-        <property name="email" value="hello@mail.com"/>
-        <property name="team" value="best-team"/>
+        <property name="email" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
 
 
     </bean>
