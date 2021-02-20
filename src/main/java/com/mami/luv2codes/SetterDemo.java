@@ -9,7 +9,7 @@ public class SetterDemo {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring.xml");
         CricketCoach cricketCoach = classPathXmlApplicationContext.getBean("cricketCoach", CricketCoach.class);
 
-        System.out.println(cricketCoach.getdailyFortune());
+        System.out.println(cricketCoach.getDailyFortune() + "\n email = " + cricketCoach.getEmail() +  "\n Team =  " + cricketCoach.getTeam() + " \n Best regards -)");
 
         classPathXmlApplicationContext.close();
     }

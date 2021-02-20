@@ -24,6 +24,10 @@
 
         <property name="fortuneService" ref="myFortuneService"/>
 
+        <property name="email" value="hello@mail.com"/>
+        <property name="team" value="best-team"/>
+
+
     </bean>
 
 

@@ -14,13 +14,13 @@ public class HelloSpring {
 
         System.out.println(baseballCoach.getDailyWorkout());
 
-        System.out.println(baseballCoach.getdailyFortune());
+        System.out.println(baseballCoach.getDailyFortune());
 
 
         TrackCoach trackCoach = ctx.getBean("trackCoach",TrackCoach.class);
 
         System.out.println(trackCoach.getDailyWorkout());
-        System.out.println(trackCoach.getdailyFortune());
+        System.out.println(trackCoach.getDailyFortune());
 
 
 

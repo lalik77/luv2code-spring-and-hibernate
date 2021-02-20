@@ -16,7 +16,7 @@ public class TrackCoach implements Coach{
 
     }
 
-    public String getdailyFortune() {
+    public String getDailyFortune() {
         return "Just do it " + fortuneService.getFortune();
     }
 }
