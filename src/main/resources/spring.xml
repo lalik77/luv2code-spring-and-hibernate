@@ -9,31 +9,7 @@
 
 
 
-    <bean id="myFortuneService" class="com.mami.luv2codes.HappyFortuneService" ></bean>
-
-    <bean id="baseballCoach" class="com.mami.luv2codes.BaseballCoach">
-
-        <constructor-arg ref="myFortuneService"/>
-    </bean>
-
-    <bean id="trackCoach" class="com.mami.luv2codes.TrackCoach "
-          init-method="myInit"
-          destroy-method="myDestroy">
-
-    <constructor-arg  ref="myFortuneService"/>
-
-    </bean>
-
-   <!-- <bean  id="cricketCoach" class="com.mami.luv2codes.CricketCoach">
-
-        <property name="fortuneService" ref="myFortuneService"/>
-
-        <property name="email" value="${foo.email}"/>
-        <property name="team" value="${foo.team}"/>
-
-
-    </bean>-->
-
+   <context:component-scan base-package="com.mami.luv2codes"/>
 
 
 </beans>
