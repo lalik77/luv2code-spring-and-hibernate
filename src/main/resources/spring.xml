@@ -16,7 +16,7 @@
         <constructor-arg ref="myFortuneService"/>
     </bean>
 
-    <bean id="trackCoach" class="com.mami.luv2codes.TrackCoach">
+    <bean id="trackCoach" class="com.mami.luv2codes.TrackCoach " scope="prototype">
     <constructor-arg  ref="myFortuneService"/>
     </bean>
 
