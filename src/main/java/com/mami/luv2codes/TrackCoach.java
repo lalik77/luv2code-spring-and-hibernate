@@ -19,4 +19,20 @@ public class TrackCoach implements Coach{
     public String getDailyFortune() {
         return "Just do it " + fortuneService.getFortune();
     }
+
+    // init method
+
+    public void myInit () {
+
+        System.out.println("My init is called");
+    }
+
+    //destroy method
+
+    public void myDestroy () {
+
+        System.out.println("My destroy is called");
+    }
+
+
 }

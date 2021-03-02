@@ -1,6 +1,5 @@
 package com.mami.luv2codes;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BeanScopesDemoApp {
@@ -13,9 +12,11 @@ public class BeanScopesDemoApp {
 
         Coach alphaCoach = ctx.getBean("trackCoach", Coach.class);
 
+        ctx.close();
+
         System.out.println(myCoach == alphaCoach);
 
-        ctx.close();
+
 
     }
 }
