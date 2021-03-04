@@ -1,12 +1,12 @@
 package com.mami.luv2codes;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
 
+    @Autowired
     FortuneService fortuneService;
 
 
@@ -16,12 +16,6 @@ public class TennisCoach implements Coach {
 
     }
 
-
-    @Autowired
-    public void doSomeCrazyStuff(FortuneService fortuneService) {
-        System.out.println("Inside doSomeCrazyStuff method of TennisCoach");
-        this.fortuneService = fortuneService;
-    }
 
     @Override
     public String getDailyWorkout() {
