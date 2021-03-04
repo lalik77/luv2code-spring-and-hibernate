@@ -12,10 +12,14 @@ public class TennisCoach implements Coach {
 
     public TennisCoach() {
 
+        System.out.println( "inside no arg Constructor of TennisCoach");
+
     }
 
 
+    @Autowired
     public void setFortuneService(FortuneService fortuneService) {
+        System.out.println("Inside setter method of TennisCoach");
         this.fortuneService = fortuneService;
     }
 
