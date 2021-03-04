@@ -10,7 +10,12 @@ public class TennisCoach implements Coach {
     FortuneService fortuneService;
 
 
-    public TennisCoach(FortuneService fortuneService) {
+    public TennisCoach() {
+
+    }
+
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 

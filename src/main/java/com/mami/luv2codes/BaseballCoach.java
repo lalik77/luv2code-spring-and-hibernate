@@ -1,5 +1,8 @@
 package com.mami.luv2codes;
 
+import org.springframework.stereotype.Component;
+
+
 public class BaseballCoach implements Coach {
 
     private FortuneService fortuneService;
