@@ -18,8 +18,8 @@ public class TennisCoach implements Coach {
 
 
     @Autowired
-    public void setFortuneService(FortuneService fortuneService) {
-        System.out.println("Inside setter method of TennisCoach");
+    public void doSomeCrazyStuff(FortuneService fortuneService) {
+        System.out.println("Inside doSomeCrazyStuff method of TennisCoach");
         this.fortuneService = fortuneService;
     }
 
