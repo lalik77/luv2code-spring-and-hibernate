@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 
     @Autowired
@@ -16,8 +18,18 @@ public class TennisCoach implements Coach {
 
     public TennisCoach() {
 
-        System.out.println( "inside no arg Constructor of TennisCoach");
+        System.out.println( ">>inside no arg Constructor of TennisCoach");
 
+    }
+
+    @PostConstruct
+    private void doMyInit() {
+        System.out.println(">>inside doMyInit");
+    }
+
+    @PreDestroy
+    private void doMyDestroy() {
+        System.out.println(">>inside doMyDestroy");
     }
 
 

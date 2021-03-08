@@ -11,9 +11,11 @@ public class AnnotationBeanScopeDemoApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         TennisCoach tennisCoach1 = context.getBean("tennisCoach", TennisCoach.class);
-        TennisCoach tennisCoach2 = context.getBean("tennisCoach", TennisCoach.class);
 
-        System.out.println(tennisCoach1 == tennisCoach2);
+
+        context.close();
+
+
 
 
     }
