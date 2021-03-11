@@ -15,6 +15,9 @@ public class SwimJavaConfigDemoApp {
 
         System.out.println(swimCoach.getDailyFortune());
 
+        System.out.println(swimCoach.getEmail());
+        System.out.println(swimCoach.getTeam());
+
         context.close();
     }
 }
