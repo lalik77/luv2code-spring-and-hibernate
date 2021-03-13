@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html>
@@ -22,6 +24,20 @@ Country : ${student.country}
 Favorite Language : ${student.favoriteLanguage}
 
 <a href="/">Back</a>
+
+<br>
+<br>
+
+Operating Systems:
+<ul>
+    <c:forEach var="temp" items="${student.operatingSystems}">
+
+
+        <li> ${temp}</li>
+
+    </c:forEach>
+
+</ul>
 
 
 
