@@ -15,6 +15,8 @@
 
 <p>Student name : ${param.studentName}</p>
 
+<p> Message : ${message} </p>
+
 <a href="/showform">Back</a>
 
 
