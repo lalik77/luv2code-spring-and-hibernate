@@ -16,6 +16,11 @@
 
 Country : ${student.country}
 
+<br>
+<br>
+
+Favorite Language : ${student.favoriteLanguage}
+
 <a href="/">Back</a>
 
 
