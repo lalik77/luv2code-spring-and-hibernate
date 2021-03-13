@@ -11,6 +11,11 @@
 
 <p> Student is confirmed  ${student.firstName}  ${student.lastName} </p>
 
+<br>
+<br>
+
+Country : ${student.country}
+
 <a href="/">Back</a>
 
 
