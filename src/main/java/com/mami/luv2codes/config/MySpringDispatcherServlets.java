@@ -1,6 +1,5 @@
 package com.mami.luv2codes.config;
 
-import com.mami.luv2codes.config.SpringConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class MySpringDispatcherServlets extends AbstractAnnotationConfigDispatcherServletInitializer {
