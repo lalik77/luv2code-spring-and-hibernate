@@ -17,30 +17,6 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
-    //private final ApplicationContext applicationContext;
-
-   /* @Autowired
-    public SpringConfig(ApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
-    }
-
-    @Bean
-    public SpringResourceTemplateResolver templateResolver() {
-        SpringResourceTemplateResolver bean = new SpringResourceTemplateResolver();
-        bean.setApplicationContext(applicationContext);
-        bean.setPrefix("/WEB-INF/lib/views/");
-        bean.setSuffix(".jsp");
-        return bean;
-    }
-    @Bean
-    public SpringTemplateEngine templateEngine() {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver());
-        templateEngine.setEnableSpringELCompiler(true);
-        return templateEngine;
-    }*/
-
-
 
 
     @Override
