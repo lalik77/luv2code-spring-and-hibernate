@@ -3,6 +3,7 @@ package com.mami.luv2codes.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,6 +31,20 @@ public class HelloWorldController {
         studentName = studentName.toUpperCase();
 
         String result = "Yo! " + studentName;
+
+        model.addAttribute("message",result);
+
+
+        return "helloworld";
+    }
+
+    @RequestMapping("/processFormV3")
+    public String processFormVersionThree(  @RequestParam("studentName") String studentName ,
+                                            Model model) {
+
+       studentName = studentName.toUpperCase();
+
+        String result = "Hey my friend ! " + studentName;
 
         model.addAttribute("message",result);
 
