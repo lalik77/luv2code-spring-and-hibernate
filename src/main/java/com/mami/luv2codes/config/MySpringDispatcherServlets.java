@@ -1,3 +1,4 @@
+/*
 package com.mami.luv2codes.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -18,4 +19,4 @@ public class MySpringDispatcherServlets extends AbstractAnnotationConfigDispatch
     protected String[] getServletMappings() {
         return new String[] {"/"};
     }
-}
+}*/

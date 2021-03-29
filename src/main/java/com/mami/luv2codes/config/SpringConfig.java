@@ -1,3 +1,4 @@
+/*
 package com.mami.luv2codes.config;
 
 
@@ -21,5 +22,6 @@ public class SpringConfig implements WebMvcConfigurer {
 
 
 }
+*/
 
 
