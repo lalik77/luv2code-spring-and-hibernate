@@ -28,9 +28,19 @@ public class CustomerController {
 
         if(theBindingResult.hasErrors()) {
 
+            System.out.println("There is errors :" + theBindingResult.hasErrors());
+
+            System.out.println("First name :" + theCustomer.getFirstName());
+            System.out.println("Last name :" + theCustomer.getLastName());
+
             return "customer-form";
         }
         else {
+
+            System.out.println("There is erors :" + theBindingResult.hasErrors());
+            System.out.println("First name :" + " " + theCustomer.getFirstName());
+            System.out.println("Last name :" + " " + theCustomer.getLastName());
+
 
             return "customer-confirmation";
         }
