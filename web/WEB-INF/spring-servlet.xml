@@ -21,9 +21,9 @@
      </bean>
 
 	<!-- Load custom message resource -->
-	<bean id="messageResource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
 
-		<property name="basename" value="resources/messages"/>
+		<property name="basenames"  value="messages"/>
 	</bean>
 
 </beans>
