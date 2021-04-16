@@ -23,7 +23,7 @@
 	<!-- Load custom message resource -->
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
 
-		<property name="basenames"  value="messages"/>
+		<property name="basenames"  value="messages-old"/>
 	</bean>
 
 </beans>
