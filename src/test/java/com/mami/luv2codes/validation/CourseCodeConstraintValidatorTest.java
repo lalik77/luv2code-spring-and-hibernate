@@ -2,36 +2,72 @@ package com.mami.luv2codes.validation;
 
 
 import com.mami.luv2codes.model.Customer;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.ConstraintValidatorContext;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 
 class CourseCodeConstraintValidatorTest {
 
-    private CourseCodeConstraintValidator validatorUnderTest = new CourseCodeConstraintValidator();
 
-    Customer customerUnderTest = new Customer();
+    private CourseCode courseCode = mock(CourseCode.class);
 
-    void setup() {
-        customerUnderTest.setCourseCode("LUV");
-        validatorUnderTest.initialize("LUV");
+    private ConstraintValidatorContext constraintValidator =
+                                                      mock(ConstraintValidatorContext.class) ;
+
+    @Test
+    public void itShouldBeValid_whenItStartsWithLUV(){
+
+        when(courseCode.value()).thenReturn("LUV");
+
+        CourseCodeConstraintValidator courseCodeConstraintValidator = new CourseCodeConstraintValidator();
+        courseCodeConstraintValidator.initialize(courseCode);
+
+        Customer customer = new Customer();
+        customer.setCourseCode("LUV!!!ttyy");
+
+        boolean result = courseCodeConstraintValidator.isValid(customer.getCourseCode(),constraintValidator);
+
+        assertTrue(result);
+
     }
 
+    @Test
+    public void itShouldNotBeValid_whenItStartsWithSpace_andLUV(){
 
-    @Nested
-    class CourseCodeValidFlow {
-        @Test
-        void isValid_shouldReturnTrue_whenStartWithLUV() {
-           assertTrue(isValid("LUV"));
-        }
+        when(courseCode.value()).thenReturn("LUV");
+
+        CourseCodeConstraintValidator courseCodeConstraintValidator = new CourseCodeConstraintValidator();
+        courseCodeConstraintValidator.initialize(courseCode);
+
+        Customer customer = new Customer();
+        customer.setCourseCode(" LUV !!ttyy");
+
+        boolean result = courseCodeConstraintValidator.isValid(customer.getCourseCode(),constraintValidator);
+
+        assertFalse(result);
+
     }
 
+    @Test
+    public void itShouldBeValid_whenNoDataProvided(){
+
+        when(courseCode.value()).thenReturn("LUV");
+
+        CourseCodeConstraintValidator courseCodeConstraintValidator = new CourseCodeConstraintValidator();
+        courseCodeConstraintValidator.initialize(courseCode);
+
+        Customer customer = new Customer();
 
 
+        boolean result = courseCodeConstraintValidator.isValid(customer.getCourseCode(),constraintValidator);
 
-    private boolean isValid(String luv) {
-        return validatorUnderTest.isValid(luv,null);
+        assertTrue(result);
 
     }
 
