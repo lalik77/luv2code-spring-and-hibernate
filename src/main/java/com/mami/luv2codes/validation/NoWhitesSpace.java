@@ -15,6 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface NoWhitesSpace {
 
+    String value() default "stack";
     String message() default "Not valid";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
