@@ -1,13 +1,11 @@
 package com.mami.luv2codes.validation;
 
 import com.mami.luv2codes.model.Customer;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import javax.validation.ConstraintValidatorContext;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.booleanThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
