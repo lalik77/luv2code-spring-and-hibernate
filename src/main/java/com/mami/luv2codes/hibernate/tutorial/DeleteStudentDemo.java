@@ -39,13 +39,6 @@ public class DeleteStudentDemo {
 
             System.out.println("Done!");
 
-
-
-
-
-
-
-
         }
         finally {
 
