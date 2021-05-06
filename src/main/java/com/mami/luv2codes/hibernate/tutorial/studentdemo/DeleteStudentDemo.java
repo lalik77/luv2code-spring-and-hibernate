@@ -1,4 +1,4 @@
-package com.mami.luv2codes.hibernate.tutorial;
+package com.mami.luv2codes.hibernate.tutorial.studentdemo;
 
 import com.mami.luv2codes.hibernate.tutorial.entity.Student;
 import org.hibernate.Session;
