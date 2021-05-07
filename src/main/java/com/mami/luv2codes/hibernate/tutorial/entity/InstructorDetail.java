@@ -20,7 +20,11 @@ public class InstructorDetail {
 
     //Add new field Instructor and getter and setter
 
-    @OneToOne(mappedBy = "instructorDetail",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "instructorDetail",
+            cascade = {CascadeType.DETACH,
+                       CascadeType.MERGE,
+                       CascadeType.REFRESH,
+                       CascadeType.PERSIST})
     private Instructor instructor;
 
     public InstructorDetail() {
