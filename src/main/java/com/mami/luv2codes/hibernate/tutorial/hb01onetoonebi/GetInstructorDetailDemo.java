@@ -28,7 +28,7 @@ public class GetInstructorDetailDemo {
 
             //Get InstructorDetail object
 
-            int theId=2;
+            int theId=1;
             InstructorDetail instructorDetailTemp =
                     session.get(InstructorDetail.class,theId);
 
@@ -52,9 +52,13 @@ public class GetInstructorDetailDemo {
 
             System.out.println("Done!");
         }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
         finally {
 
+            session.close();
             factory.close();
         }
     }
