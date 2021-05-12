@@ -1,6 +1,8 @@
 package com.mami.luv2codes.hibernate.tutorial.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "instructor")
@@ -24,6 +26,11 @@ public class Instructor {
     @JoinColumn(name = "instructor_detail_id")
     private InstructorDetail instructorDetail;
 
+    @OneToMany(mappedBy = "instructor", cascade = {
+            CascadeType.DETACH,CascadeType.MERGE,
+            CascadeType.PERSIST,CascadeType.REFRESH  })
+    private List<Course>  courseList ;
+
     public Instructor() {
     }
 
@@ -31,6 +38,14 @@ public class Instructor {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
     }
 
     public int getId() {
@@ -82,5 +97,20 @@ public class Instructor {
                 ", email='" + email + '\'' +
                 ", instructorDetail=" + instructorDetail +
                 '}';
+    }
+
+
+    //add convenience methods for bi-directional relationship
+
+    public void addCourse(Course tempCourse) {
+
+        if(courseList == null) {
+
+            courseList = new ArrayList<>();
+        }
+
+        courseList.add(tempCourse);
+
+        tempCourse.setInstructor(this);
     }
 }
