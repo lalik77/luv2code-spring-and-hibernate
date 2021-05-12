@@ -25,7 +25,6 @@ public class GetInstructorCourseDemo {
 
         try {
 
-
             //Start a transaction
 
             session.beginTransaction();
@@ -41,11 +40,12 @@ public class GetInstructorCourseDemo {
             System.out.println(retrievedInstructor.getCourseList());
 
             //Commit transaction
-
             session.getTransaction().commit();
 
             System.out.println("Done!");
         }
+
+
         finally {
 
             factory.close();

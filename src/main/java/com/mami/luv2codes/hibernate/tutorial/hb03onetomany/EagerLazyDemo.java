@@ -33,15 +33,23 @@ public class EagerLazyDemo {
 
             Instructor retrievedInstructor = session.get(Instructor.class,theId);
 
-            System.out.println( "Instructor " + retrievedInstructor);
+            System.out.println( "\nLuv2 code : Instructor " + retrievedInstructor);
 
-            //get course for the instructor
+            System.out.println("Loaded in memory while session is opened " + retrievedInstructor.getCourseList());
 
-            System.out.println(retrievedInstructor.getCourseList());
 
             //Commit transaction
 
             session.getTransaction().commit();
+
+
+
+            //close session
+            session.close();
+
+            //get course for the instructor
+
+            System.out.println(retrievedInstructor.getCourseList());
 
             System.out.println("Done!");
         }
