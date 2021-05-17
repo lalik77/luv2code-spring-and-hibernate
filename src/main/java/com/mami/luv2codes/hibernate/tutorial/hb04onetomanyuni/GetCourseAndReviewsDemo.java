@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateCourseDemo {
+public class GetCourseAndReviewsDemo {
 
     public static void main(String[] args) {
 
@@ -27,41 +27,26 @@ public class CreateCourseDemo {
 
         try {
 
-
             //Start a transaction
 
             session.beginTransaction();
 
-            // Create a course in memory
+            //get the course
 
-            Course tempCourse = new Course("Pacman - How ...");
+            int theId =10; // id taked from db
+            Course tempCourse = session.get(Course.class, theId); // Course is now in the memory
 
-            //add some reviews in memory
-            tempCourse.addReview(new Review("Very good .... love it"));
-            tempCourse.addReview(new Review("Cool .... very nice"));
-            tempCourse.addReview(new Review("Fine .... love it"));
-
-            //save course ... and leverage the cascade all - pass from memory to db
-
-            System.out.println(" Saving the course");
-            System.out.println(tempCourse);
-            System.out.println(tempCourse.getReviews());
-            session.save(tempCourse);
-
-
-
-
-
-
-
+            //delete the course
+            session.delete(tempCourse); // wil delete from db , remember
 
 
             //Commit transaction
-
             session.getTransaction().commit();
 
             System.out.println("Done!");
         }
+
+
         finally {
 
             factory.close();
