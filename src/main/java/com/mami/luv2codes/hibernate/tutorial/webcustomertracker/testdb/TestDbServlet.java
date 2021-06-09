@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-@WebServlet(name = "TestDbServlet")
+@WebServlet("/TestDbServlet")
 public class TestDbServlet extends HttpServlet {
 
   /*  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +24,8 @@ public class TestDbServlet extends HttpServlet {
         String user = "springstudent";
         String pass = "springstudent";
 
-        String jdbcUrl = "jdbc:mysql://localhost:3306/web_customer_tracker?useSSL=false&serverTimezone=UTC";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/" +
+                "web_customer_tracker?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
         String driver = "com.mysql.jdbc.Driver";
 
         //get  connection to database
@@ -37,9 +38,11 @@ public class TestDbServlet extends HttpServlet {
 
             Class.forName(driver);
 
-            Connection myconn = DriverManager.getConnection(jdbcUrl,user,pass);
+            Connection myconn = DriverManager.getConnection(jdbcUrl,"root","password");
 
             out.println("SUCCESS!");
+
+            myconn.close();
 
         }catch (Exception e) {
 
