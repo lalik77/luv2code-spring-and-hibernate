@@ -88,6 +88,13 @@
         <version>0.9.1.2</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>5.0.2.RELEASE</version>
+    </dependency>
+
 
 
 </dependencies>
