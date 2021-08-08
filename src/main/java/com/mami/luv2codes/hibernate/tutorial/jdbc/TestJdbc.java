@@ -8,7 +8,7 @@ public class TestJdbc {
 
     public static void main(String[] args) {
         String jdbcUrl = "jdbc:mysql://localhost:3306/web_customer_tracker?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
-        String user = "springstudent";
+        String user = "springstudent"; // check 'localhost' if is changed by '%'
         String pass = "springstudent";
 
 
