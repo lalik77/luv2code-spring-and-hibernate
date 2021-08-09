@@ -6,6 +6,10 @@
 <head>
     <title>List customers</title>
 
+    <%--reference our style sheet--%>
+
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+
 
 </head>
 
