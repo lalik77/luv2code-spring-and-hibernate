@@ -17,7 +17,6 @@ public class CustomerDaoImpl implements CustomerDao {
     SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public List<Customer> getCustomers() {
 
 
