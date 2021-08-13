@@ -26,7 +26,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
         // create query
 
-        Query<Customer> thQuery = currentSession.createQuery("from Customer ", Customer.class);
+        Query<Customer> thQuery = currentSession.createQuery("from Customer order by lastName", Customer.class);
 
 
         //execute query
