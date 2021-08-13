@@ -38,4 +38,13 @@ public class CustomerDaoImpl implements CustomerDao {
         return customers;
 
     }
+
+
+    @Override
+    public void saveCustomer(Customer customer) {
+
+        Session currentSession = sessionFactory.getCurrentSession();
+
+        currentSession.save(customer);
+    }
 }
