@@ -3,7 +3,7 @@ package com.mami.luv2codes.aopdemo.dao;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AnotherAccountDao {
+public class AnotherAccountDAO {
 
     public void addAccount() {
 

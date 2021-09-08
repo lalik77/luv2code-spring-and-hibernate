@@ -1,7 +1,7 @@
 package com.mami.luv2codes.aopdemo;
 
 import com.mami.luv2codes.aopdemo.dao.AccountDAO;
-import com.mami.luv2codes.aopdemo.dao.AnotherAccountDao;
+import com.mami.luv2codes.aopdemo.dao.AnotherAccountDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainDemoApp {
@@ -21,8 +21,8 @@ public class MainDemoApp {
 
         theAccountDAO.addAccount();
 
-        AnotherAccountDao theAnotherAccountDAO =
-                context.getBean("anotherAccountDao", AnotherAccountDao.class);
+        AnotherAccountDAO theAnotherAccountDAO =
+                context.getBean("anotherAccountDAO", AnotherAccountDAO.class);
 
         theAnotherAccountDAO.addAccount();
 
