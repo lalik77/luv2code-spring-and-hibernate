@@ -1,6 +1,7 @@
 package com.mami.luv2codes.aopdemo;
 
 import com.mami.luv2codes.aopdemo.dao.AccountDAO;
+import com.mami.luv2codes.aopdemo.dao.AnotherAccountDao;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainDemoApp {
@@ -20,7 +21,10 @@ public class MainDemoApp {
 
         theAccountDAO.addAccount();
 
+        AnotherAccountDao theAnotherAccountDAO =
+                context.getBean("anotherAccountDao", AnotherAccountDao.class);
 
+        theAnotherAccountDAO.addAccount();
 
 
         // call the business method
