@@ -11,4 +11,9 @@ public class AnotherAccountDAO {
 
         return true;
     }
+
+    public void doWork() {
+
+        System.out.println("Doing work in " + getClass());
+    }
 }

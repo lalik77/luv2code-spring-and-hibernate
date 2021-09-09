@@ -28,6 +28,8 @@ public class MainDemoApp {
 
         theAnotherAccountDAO.addAccount();
 
+        theAnotherAccountDAO.doWork();
+
 
         // call the business method
 
