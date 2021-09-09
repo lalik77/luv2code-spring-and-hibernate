@@ -19,7 +19,9 @@ public class MainDemoApp {
 
         AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
 
-        theAccountDAO.addAccount();
+        Account account = new Account();
+
+        theAccountDAO.addAccount(account);
 
         AnotherAccountDAO theAnotherAccountDAO =
                 context.getBean("anotherAccountDAO", AnotherAccountDAO.class);
