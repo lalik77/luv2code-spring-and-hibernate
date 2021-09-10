@@ -23,15 +23,14 @@ public class MainDemoApp {
 
         theAccountDAO.addAccount(account,true);
 
-        AnotherAccountDAO theAnotherAccountDAO =
-                context.getBean("anotherAccountDAO", AnotherAccountDAO.class);
-
-        theAnotherAccountDAO.addAccount();
-
-        theAnotherAccountDAO.doWork();
+        theAccountDAO.setName("fooBar");
+        theAccountDAO.setServiceCode("silver");
 
 
-        // call the business method
+        String name = theAccountDAO.getName();
+        String serviceCode = theAccountDAO.getServiceCode();
+
+
 
         context.close();
 
