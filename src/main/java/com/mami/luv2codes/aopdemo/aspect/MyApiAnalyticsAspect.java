@@ -5,21 +5,14 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Component
 @Aspect
-@Order(2)
-public class MyDemoLoggingAspect {
+@Component
+@Order(3)
+public class MyApiAnalyticsAspect {
 
     @Before("com.mami.luv2codes.aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterNoSetter()")
-    public void addAccountAdvice() {
+    public void performApiAnalytics (){
 
-        System.out.println("\n =====>>> Execution @Before advice on method addAccountAdvice");
+        System.out.println("\n =====>>> Execution Performing API Analytics");
     }
-
-
-
-
-
-
-
 }
