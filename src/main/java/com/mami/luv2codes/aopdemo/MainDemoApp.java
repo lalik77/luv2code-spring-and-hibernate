@@ -20,15 +20,17 @@ public class MainDemoApp {
         AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
 
         Account account = new Account();
+        account.setName("A");
+        account.setLevel("7");
 
         theAccountDAO.addAccount(account,true);
 
-        theAccountDAO.setName("fooBar");
-        theAccountDAO.setServiceCode("silver");
+        //theAccountDAO.setName("fooBar");
+        //theAccountDAO.setServiceCode("silver");
 
 
-        String name = theAccountDAO.getName();
-        String serviceCode = theAccountDAO.getServiceCode();
+        //String name = theAccountDAO.getName();
+       // String serviceCode = theAccountDAO.getServiceCode();
 
 
 
