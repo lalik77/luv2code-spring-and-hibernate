@@ -18,9 +18,9 @@ public class AccountDAO {
 
 
         List<Account> myAccounts = new ArrayList<>();
-        Account temp1 = new Account("M","Plat");
-        Account temp2 = new Account("L","Gld");
-        Account temp3 = new Account("J","Slvr");
+        Account temp1 = new Account("Madhu","Plat");
+        Account temp2 = new Account("Lower","Gld");
+        Account temp3 = new Account("Johnson","Slvr");
 
         myAccounts.add(temp1);
         myAccounts.add(temp2);
