@@ -2,16 +2,35 @@ package com.mami.luv2codes.aopdemo.aspect;
 
 import com.mami.luv2codes.aopdemo.Account;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @Aspect
 @Order(2)
 public class MyDemoLoggingAspect {
+
+    @AfterReturning(
+            pointcut = "execution(* com.mami.luv2codes.aopdemo.dao.AccountDAO.findAccounts(..))",
+            returning = "result"
+    )
+    public void afterReturningFindAccountsAdvice(
+            JoinPoint theJP,
+            List<Account> result    )
+    {
+        String method = theJP.getSignature().toShortString();
+        System.out.println("\n======> Executing @AfterReturning on method: " + method);
+
+        System.out.println("====> result is : " + result);
+
+
+    }
 
     @Before("com.mami.luv2codes.aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterNoSetter()")
     public void addAccountAdvice(JoinPoint joinPoint) {

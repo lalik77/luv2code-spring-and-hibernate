@@ -19,7 +19,7 @@ public class MyCloudAsyncAspect {
 
         MethodSignature methodSignature =(MethodSignature) joinPoint.getSignature();
 
-        System.out.println("Method in MyCloudAsyncAspect class " + methodSignature);
+        System.out.println("Method :" + methodSignature);
 
     }
 }
