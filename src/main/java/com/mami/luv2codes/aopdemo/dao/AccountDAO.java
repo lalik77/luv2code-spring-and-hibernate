@@ -14,8 +14,15 @@ public class AccountDAO {
 
 
 
-    public List<Account> findAccounts () {
+    public List<Account> findAccounts (boolean tripwire) {
 
+
+        // for academic purpose .. simulate exception
+
+        if (tripwire) {
+
+            throw new RuntimeException("No soup for you!!!");
+        }
 
         List<Account> myAccounts = new ArrayList<>();
         Account temp1 = new Account("Madhu","Plat");
