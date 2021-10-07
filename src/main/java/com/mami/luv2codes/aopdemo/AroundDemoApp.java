@@ -22,17 +22,14 @@ public class AroundDemoApp {
 
         String data = fortuneService.getFortune();
 
-        System.out.println("\nMy fortne is :" + data);
+        System.out.println("\nMy fortune is :" + data);
 
         System.out.println("Finished");
 
-
-
-
-
+        // close th context
         context.close();
 
-        // close th context
+
 
 
     }
