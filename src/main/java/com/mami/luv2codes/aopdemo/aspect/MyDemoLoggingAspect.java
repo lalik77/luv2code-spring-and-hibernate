@@ -14,11 +14,14 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @Component
 @Aspect
 @Order(2)
 public class MyDemoLoggingAspect {
+
+    private Logger mylogger = Logger.getLogger(getClass().getName());
 
 
 
@@ -28,7 +31,7 @@ public class MyDemoLoggingAspect {
         //print out method we are advising on
 
         String method = theProceedingJoinPoint.getSignature().toShortString();
-        System.out.println("\n======> Executing @Around  on method: " + method);
+        mylogger.info("\n======> Executing @Around  on method: " + method);
 
 
         // get begin timestamp
@@ -37,7 +40,22 @@ public class MyDemoLoggingAspect {
 
         // now lets execute the method
 
-        Object result = theProceedingJoinPoint.proceed();
+        Object result = null;
+        try {
+            result = theProceedingJoinPoint.proceed();
+        } catch (Exception e) {
+
+            //log the exception
+            mylogger.warning(e.getMessage());
+
+            // give to client a custom message
+
+            result = "Major accident but no worries ";
+
+        }
+
+
+
 ;
         // get end timestamp
 
@@ -47,125 +65,12 @@ public class MyDemoLoggingAspect {
 
         long duration = end - begin;
 
-        System.out.println("\n======> Duration :" + duration / 1000.0 + " seconds");
+        mylogger.info("\n======> Duration :" + duration / 1000.0 + " seconds");
 
         return result;
 
 
     }
-
-    @After("execution(* com.mami.luv2codes.aopdemo.dao.AccountDAO.findAccounts(..))")
-    public void afterFinallyFindAccountAdvice(JoinPoint theJp) {
-
-        String method = theJp.getSignature().toShortString();
-        System.out.println("\n======> Executing @After (finally) on method: " + method);
-
-    }
-
-
-    @AfterThrowing(
-            pointcut = "execution(* com.mami.luv2codes.aopdemo.dao.AccountDAO.findAccounts(..))",
-            throwing = "theExc"
-    )
-    public void afterThrowingFindAccountsAdvice(
-            JoinPoint theJoinPoint, Throwable theExc
-    ) {
-
-        //print out which method we are advising on
-
-        String method = theJoinPoint.getSignature().toShortString();
-        System.out.println("\n======> Executing @AfterThrowing on method: " + method);
-
-
-        // log the exception
-
-        System.out.println("\n=======>> The exception is :" + theExc);
-
-
-    }
-
-
-
-
-
-    @AfterReturning(
-            pointcut = "execution(* com.mami.luv2codes.aopdemo.dao.AccountDAO.findAccounts(..))",
-            returning = "result"
-    )
-    public void afterReturningFindAccountsAdvice(
-            JoinPoint theJP,
-            List<Account> result    )
-    {
-        String method = theJP.getSignature().toShortString();
-        System.out.println("\n======> Executing @AfterReturning on method: " + method);
-
-        convertAccountNamesToUppercase(result);
-
-        System.out.println("====> result is : " + result);
-
-        // les's post-process the data - let's modify it
-
-        // converts account names to uppercase
-
-
-
-
-
-
-    }
-
-    private void convertAccountNamesToUppercase(List<Account> result) {
-
-        //loop through accounts
-
-        for(Account tmp : result) {
-
-            //get uppercase version of name
-            String theUpperName = tmp.getName().toUpperCase();
-
-            //update the name on the acc
-            tmp.setName(theUpperName);
-
-        }
-
-
-    }
-
-    @Before("com.mami.luv2codes.aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterNoSetter()")
-    public void addAccountAdvice(JoinPoint joinPoint) {
-
-        System.out.println("\n =====>>> Execution @Before advice on method addAccountAdvice");
-
-
-        //Display method signature
-        MethodSignature methodSignature=(MethodSignature) joinPoint.getSignature();
-
-        System.out.println("Method :" + methodSignature);
-
-
-
-        //Display method arguments
-
-        Object[] args = joinPoint.getArgs();
-
-        for (Object o : args) {
-            System.out.println(o);
-
-            if(o instanceof Account){
-                Account theAcc=(Account)o;
-                System.out.println("name:"+theAcc.getName());
-                System.out.println(("level" + theAcc.getLevel()));
-            }
-
-
-
-        }
-
-
-
-    }
-
-
 
 
 
