@@ -48,9 +48,9 @@ public class MyDemoLoggingAspect {
             //log the exception
             mylogger.warning(e.getMessage());
 
-            // give to client a custom message
+            // rethrow the exception
 
-            result = "Major accident but no worries ";
+            throw e;
 
         }
 
